@@ -16,3 +16,10 @@ for(let i=0;i<data.length;i++)
     uli_nav.append(" " +data[i].title);
     nav.append(uli_nav);
 }
+let nav_element=nav.children;//all the navigation bar elements as object
+
+//initial action
+nav_element[0].classList.add("bluebutton");
+let curr_nav=0;//for current navigation
+myImage.setAttribute("src",data[0].previewImage);
+myTitle.value=data[0].title;
