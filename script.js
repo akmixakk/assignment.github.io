@@ -2,7 +2,7 @@ import data from "./input.js"
 
 function start_and_end(str)
 {
-    if(str.length>40)
+    if(str.length>38)
     return str.substr(0,25) +'...' + str.substr(str.length-10,str.length);
     return str;
 }
