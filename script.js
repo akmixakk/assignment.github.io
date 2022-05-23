@@ -54,3 +54,18 @@ document.addEventListener("keydown", function (event) {
       myImage.setAttribute("src",data[curr_nav].previewImage);
       }
 }, true);
+
+//modifying the title below image and reflecting it on navigation bar
+myTitle.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        let value_entered=myTitle.value;
+        const image_nav=document.createElement("img");
+        image_nav.setAttribute("src",data[curr_nav].previewImage);
+        image_nav.classList.add("navimage");
+        nav_element[curr_nav].innerHTML="";
+        nav_element[curr_nav].appendChild(image_nav);
+        nav_element[curr_nav].append(value_entered);
+        //To prevent new line breaks when we press enter
+        e.preventDefault();
+    }
+});
