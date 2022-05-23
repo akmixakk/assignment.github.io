@@ -1,6 +1,13 @@
 import data from "./input.js"
 
+function start_and_end(str)
+{
+    if(str.length>40)
+    return str.substr(0,25) +'...' + str.substr(str.length-10,str.length);
+    return str;
+}
 //variables to access the elements of HTML
+
 const nav=document.querySelector("#navigation");
 const myImage=document.querySelector(".imageToDisplay");
 const myTitle=document.querySelector("#input_title");
@@ -11,10 +18,11 @@ for(let i=0;i<data.length;i++)
     const uli_nav=document.createElement("ul");
     const image_nav=document.createElement("img");
     const text_title=document.createElement("span");
+    const txt=start_and_end(data[i].title);
+    text_title.innerHTML=`&nbsp${txt}`;
     image_nav.setAttribute("src",data[i].previewImage);
     image_nav.classList.add("navimage");
     uli_nav.appendChild(image_nav);
-    text_title.innerHTML=`&nbsp${data[i].title}`;
     uli_nav.append(text_title);
     nav.append(uli_nav);
 }
@@ -61,6 +69,7 @@ document.addEventListener("keydown", function (event) {
 myTitle.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         let value_entered=myTitle.value;
+        value_entered=start_and_end(value_entered);
         const image_nav=document.createElement("img");
         const text_title=document.createElement("span");
         text_title.innerHTML=`&nbsp${value_entered}`;
