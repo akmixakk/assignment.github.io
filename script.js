@@ -34,3 +34,23 @@ for(let i=0;i<nav_element.length;i++)
         curr_nav=i;
     })
 }
+
+//adding arrowkey up and down functionality on navigation bar
+document.addEventListener("keydown", function (event) {
+    if(event.key === "ArrowDown"){
+      // Do something for "down arrow" key press.
+      nav_element[curr_nav].classList.remove("bluebutton");
+      curr_nav = (curr_nav<nav_element.length-1) ? curr_nav+1 : 0;
+      nav_element[curr_nav].classList.add("bluebutton");
+      myTitle.value=data[curr_nav].title;
+      myImage.setAttribute("src",data[curr_nav].previewImage);
+      }
+    if(event.key === "ArrowUp"){
+      // Do something for "up arrow" key press.
+      nav_element[curr_nav].classList.remove("bluebutton");
+      curr_nav = (curr_nav>0) ? curr_nav-1 : nav_element.length-1;
+      nav_element[curr_nav].classList.add("bluebutton");
+      myTitle.value=data[curr_nav].title;
+      myImage.setAttribute("src",data[curr_nav].previewImage);
+      }
+}, true);
