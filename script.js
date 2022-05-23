@@ -10,10 +10,12 @@ for(let i=0;i<data.length;i++)
 {
     const uli_nav=document.createElement("ul");
     const image_nav=document.createElement("img");
+    const text_title=document.createElement("span");
     image_nav.setAttribute("src",data[i].previewImage);
     image_nav.classList.add("navimage");
     uli_nav.appendChild(image_nav);
-    uli_nav.append(" " +data[i].title);
+    text_title.innerHTML=`&nbsp${data[i].title}`;
+    uli_nav.append(text_title);
     nav.append(uli_nav);
 }
 let nav_element=nav.children;//all the navigation bar elements as object
@@ -60,11 +62,13 @@ myTitle.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         let value_entered=myTitle.value;
         const image_nav=document.createElement("img");
+        const text_title=document.createElement("span");
+        text_title.innerHTML=`&nbsp${value_entered}`;
         image_nav.setAttribute("src",data[curr_nav].previewImage);
         image_nav.classList.add("navimage");
         nav_element[curr_nav].innerHTML="";
         nav_element[curr_nav].appendChild(image_nav);
-        nav_element[curr_nav].append(value_entered);
+        nav_element[curr_nav].append(text_title);
         //To prevent new line breaks when we press enter
         e.preventDefault();
     }
