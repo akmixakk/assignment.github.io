@@ -1,0 +1,38 @@
+body{
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+ul{
+    padding:1vh;
+    width: 300px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.navimage{
+    width:30px;
+    height:30px;
+}
+.imageToDisplay{
+    height: 93vh;
+    width: 47vw;
+}
+.bluebutton{
+    background-color: rgb(79, 117, 203);
+}
+.child{
+    display: inline-block;
+}
+#input_title {caret-color: transparent;border:0;outline:0;
+             text-align:center;}
+#input_title:focus {outline:none!important;}
+
+#navigation{
+    position: relative;
+    top: 0%;
+    margin-right:50px;
+    bottom:10%;
+    transform: translateY(-150%);
+}
